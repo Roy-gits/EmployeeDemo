@@ -1,0 +1,97 @@
+<div *ngIf="!IsForUpdate" class="container">
+<h1>Employee Details</h1>
+<br/>
+    <div class="row">
+        <div class="input-group">
+        <span class="input-group-addon" id="basic-addon1">
+          <span class="glyphicon glyphicon-search"></span>
+        </span>
+        <input type="text" (keyup)="0" #input1 class="form-control" placeholder="Search" aria-describedby="basic-addon1">
+      </div>
+        </div>
+        <br/>
+  <table class="table">
+    <thead>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Department</th>
+      <th>Status</th>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of emp; let i= index">
+        <td>{{item.Id}}</td>
+        <td>{{item.Name | uppercase}}</td>
+        <td>{{item.Department}}</td>
+        <td>{{item.Status}}</td>
+        <td><button (click)="delTask(item)"><span class="glyphicon glyphicon-trash"></span></button>
+        <button><span class="glyphicon glyphicon-pencil" (click)="onEditClick(i,myDialog)"></span></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button type="button" (click)="onAddEmp()" class="btn btn-info">Add</button>
+  </div>
+
+
+
+
+<!-----------------------------------------------For Edit Employee------------------------------------->
+
+  <ng-template #myDialog>
+<div *ngIf="IsForUpdate" class="container">
+  <h1>Edit Employee</h1>
+  <div class="row">
+     <form (ngSubmit)="updateemp()" #addform="ngForm">
+        <div class="form-group">
+          <label for="id">Id</label>
+          <input type="number" [(ngModel)]="newItem.id"
+          name="id"
+          class="form-control" id="id"
+           required #id="ngModel">
+        </div>
+         <div [hidden]="id.valid || id.pristine"
+               class="alert alert-danger">
+            Employee Id is required
+          </div>
+
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" [(ngModel)]="newItem.name"
+          name="name"
+          class="form-control" id="name"
+           required #name="ngModel">
+        </div>
+         <div [hidden]="name.valid || name.pristine"
+               class="alert alert-danger">
+               Name is required
+          </div>
+          <div class="form-group">
+              <label for="name">Department</label>
+              <input type="text" [(ngModel)]="newItem.department"
+              name="department"
+              class="form-control" id="department"
+               required #department="ngModel">
+            </div>
+             <div [hidden]="department.valid || department.pristine"
+                   class="alert alert-danger">
+                   Department is required
+              </div>
+
+
+        <div class="form-group">
+    <label for="power">Status</label>
+    <select class="form-control" id="status"
+    [(ngModel)]="newItem.Status" name="status"
+     required>
+      <option *ngFor="let s of status" [value]="s">{{s}}</option>
+    </select>
+  </div>
+        <button type="submit" class="btn btn-default form-control" [disabled]="!addform.form.valid" >Add Task</button>
+      </form>
+      <br/>
+      <button type="button" (click)="OnCancel()" class="btn btn-info form-control"  >Cancel</button>
+  </div>
+  </div>
+</ng-template>
+
+
