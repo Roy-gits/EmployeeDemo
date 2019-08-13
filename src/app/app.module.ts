@@ -8,6 +8,10 @@ import { routing } from './app.rote';
 import { EditemployeeComponent } from './employee/editemployee/editemployee.component';
 import {MatDialogModule} from '@angular/material';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MenuComponent } from './menu/menu.component';
+import { RecruitmentComponent } from './recruitment/recruitment.component';
+import {MatCardModule} from '@angular/material/card';
+import {DragDropModule} from '@angular/cdk/drag-drop';
 
 
 
@@ -16,7 +20,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AppComponent,
     EmployeeComponent,
     AddEmployeeComponent,
-    EditemployeeComponent
+    EditemployeeComponent,
+    MenuComponent,
+    RecruitmentComponent
   ],
   imports: [
     BrowserModule,
@@ -24,6 +30,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     routing,
     MatDialogModule,
     BrowserAnimationsModule,
+    MatCardModule,
+    DragDropModule
+
 
   ],
   providers: [],

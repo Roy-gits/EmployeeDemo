@@ -1,0 +1,77 @@
+.example-card {
+  max-width: 200px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+
+}
+
+.example-header-image {
+  background-image: url('https://cdn0.iconfinder.com/data/icons/miscellaneousness-long-shadow-flat/33/employee-512.png');
+  background-size: cover;
+}
+
+
+
+
+
+
+
+
+.drag-drop-list{
+  width:300px;
+  max-width: 100%;
+  border: solid 1px white;
+  border-radius: 4px;
+  overflow: hidden;
+
+}
+
+.drag-drop-box{
+  padding: 10px 10px;
+  border-bottom: 1px solid whitesmoke;
+display: flex;
+flex-direction: row;
+align-items: center;
+  justify-content: space-between;
+
+}
+
+.drag-drop-container{
+  border:1px solid rgb(241, 235, 235);
+
+  margin-left: 10px;
+  margin-right: 10px;
+
+
+}
+h3{
+  text-align: center;
+  padding-top: 10px;
+  color: blue;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+h2{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  text-decoration: underline;
+  text-decoration-color: red;
+}
+#mum{
+  float: left;
+
+
+}
+#hyd {
+
+  float: left;
+  margin-left: 180px;
+
+}
+#del {
+  float:right;
+
+}
