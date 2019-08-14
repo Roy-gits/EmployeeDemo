@@ -12,6 +12,9 @@ import { MenuComponent } from './menu/menu.component';
 import { RecruitmentComponent } from './recruitment/recruitment.component';
 import {MatCardModule} from '@angular/material/card';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import {MatButtonModule} from '@angular/material/button';
+import { FilterPipe } from './recruitment/filter.pipe';
+
 
 
 
@@ -22,7 +25,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     AddEmployeeComponent,
     EditemployeeComponent,
     MenuComponent,
-    RecruitmentComponent
+    RecruitmentComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatDialogModule,
     BrowserAnimationsModule,
     MatCardModule,
-    DragDropModule
+    DragDropModule,
+    MatButtonModule
+
 
 
   ],

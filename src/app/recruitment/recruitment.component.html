@@ -1,4 +1,4 @@
-<div  >
+
 <div>
 
 
@@ -9,28 +9,38 @@
          [cdkDropListConnectedTo] ="[hyderabad,delhi]"
          (cdkDropListDropped) = "drop($event)"  id='mum'
          class="drag-drop-container"
-          style="background-color:powderblue;">
-
-         <h3>List Of Employees</h3>
-         <mat-card class="example-card" *ngFor="let item of emplist"   cdkDrag>
+         >
+          <div  class='drag-drop-list' >
+         <h3>Candidates</h3>
+         <mat-card class="example-card"   *ngFor="let item of emplist ;let i= index"  cdkDrag>
             <mat-card-header>
                 <div mat-card-avatar class="example-header-image"></div>
             <mat-card-title>{{item.name}}</mat-card-title>
             <mat-card-subtitle>{{item.age}}</mat-card-subtitle>
           </mat-card-header>
 
-            <mat-card-content>
-              Education:{{item.education}}<br/>
-              Work-Ex:{{item.exp}}<br/>
-              Place:{{item.place}}
+            <mat-card-content >
+              <label id='mum'>Education</label>:
+              <label>{{item.education}}</label>
+              <br/>
+              <label  id='mum'> Work-Ex</label>:
+              <label>{{item.exp}}</label><br/>
+              <label id='mum'> Place</label>:
+              <label> {{item.place}}</label>
+              <br/>
+              <label class="lbl">Status</label>
+              <label class="lbl2">{{item.status }}</label>
+
+
             </mat-card-content>
 
+            <mat-card-footer>
             <mat-card-actions>
-                <button mat-button>LIKE</button>
-                <button mat-button>SHARE</button>
+                <button mat-raised-button color="accent"  (click)="onEditClick(i,myDialog)"style="margin-right:5px;">Move</button>
               </mat-card-actions>
-
+            </mat-card-footer>
         </mat-card>
+      </div>
     </div>
 
 
@@ -42,112 +52,255 @@
     [cdkDropListConnectedTo] ="[hyderabad,delhi]"
     (cdkDropListDropped) = "drop($event)"  id='mum'
     class="drag-drop-container"
-     style="background-color:powderblue;">
-
-    <h3>G-D Round</h3>
-    <mat-card class="example-card" cdkDrag>
+    >
+     <div  class='drag-drop-list'  >
+    <h3>G-D</h3>
+    <mat-card class="example-card" *ngFor="let item of gdround ;let i= index"  cdkDrag>
        <mat-card-header>
            <div mat-card-avatar class="example-header-image"></div>
-       <mat-card-title>Employee1</mat-card-title>
-       <mat-card-subtitle>details</mat-card-subtitle>
+       <mat-card-title>{{item.name}}</mat-card-title>
+       <mat-card-subtitle>{{item.age}}</mat-card-subtitle>
      </mat-card-header>
 
-       <mat-card-content>here for interview</mat-card-content>
+       <mat-card-content >
+         <label id='mum'>Education</label>:
+         <label>{{item.education}}</label>
+         <br/>
+         <label  id='mum'> Work-Ex</label>:
+         <label>{{item.exp}}</label><br/>
+         <label id='mum'> Place</label>:
+         <label> {{item.place}}</label>
+         <br/>
+         <label class="lbl">Status</label>
+         <label class="lbl2">{{item.status}}</label>
 
+
+       </mat-card-content>
+
+       <mat-card-footer>
        <mat-card-actions>
-           <button mat-button>LIKE</button>
-           <button mat-button>SHARE</button>
+           <button mat-raised-button color="accent" style="margin-right:5px;">Move</button>
          </mat-card-actions>
-
+       </mat-card-footer>
    </mat-card>
-</div>
-
-
-
-<div
-cdkDropList
-#mumbai = "cdkDropList"
-[cdkDropListData] ="Mumbai"
-[cdkDropListConnectedTo] ="[hyderabad,delhi]"
-(cdkDropListDropped) = "drop($event)"  id='mum'
-class="drag-drop-container"
- style="background-color:powderblue;">
-
-<h3>Technical Round</h3>
-<mat-card class="example-card" cdkDrag>
-   <mat-card-header>
-       <div mat-card-avatar class="example-header-image"></div>
-   <mat-card-title>Employee1</mat-card-title>
-   <mat-card-subtitle>details</mat-card-subtitle>
- </mat-card-header>
-
-   <mat-card-content>here for interview</mat-card-content>
-
-   <mat-card-actions>
-       <button mat-button>LIKE</button>
-       <button mat-button>SHARE</button>
-     </mat-card-actions>
-
-</mat-card>
+ </div>
 </div>
 
 
 
 
 <div
-cdkDropList
-#mumbai = "cdkDropList"
-[cdkDropListData] ="Mumbai"
-[cdkDropListConnectedTo] ="[hyderabad,delhi]"
-(cdkDropListDropped) = "drop($event)"  id='mum'
-class="drag-drop-container"
- style="background-color:powderblue;">
+    cdkDropList
+    #mumbai = "cdkDropList"
+    [cdkDropListData] ="Mumbai"
+    [cdkDropListConnectedTo] ="[hyderabad,delhi]"
+    (cdkDropListDropped) = "drop($event)"  id='mum'
+    class="drag-drop-container"
+    >
+     <div  class='drag-drop-list' >
+    <h3>Technical</h3>
+    <mat-card class="example-card" *ngFor="let item of technical ;let i= index"  cdkDrag>
+       <mat-card-header>
+           <div mat-card-avatar class="example-header-image"></div>
+       <mat-card-title>{{item.name}}</mat-card-title>
+       <mat-card-subtitle>{{item.age}}</mat-card-subtitle>
+     </mat-card-header>
 
-<h3>HR Round</h3>
-<mat-card class="example-card" cdkDrag>
-   <mat-card-header>
-       <div mat-card-avatar class="example-header-image"></div>
-   <mat-card-title>Employee1</mat-card-title>
-   <mat-card-subtitle>details</mat-card-subtitle>
- </mat-card-header>
+       <mat-card-content >
+         <label id='mum'>Education</label>:
+         <label>{{item.education}}</label>
+         <br/>
+         <label  id='mum'> Work-Ex</label>:
+         <label>{{item.exp}}</label><br/>
+         <label id='mum'> Place</label>:
+         <label> {{item.place}}</label>
+         <br/>
+         <label class="lbl">Status</label>
+         <label class="lbl2">{{item.status}}</label>
 
 
-   <mat-card-content>here for interview</mat-card-content>
+       </mat-card-content>
 
-   <mat-card-actions>
-       <button mat-button>LIKE</button>
-       <button mat-button>SHARE</button>
-     </mat-card-actions>
+       <mat-card-footer>
+       <mat-card-actions>
+           <button mat-raised-button color="accent" style="margin-right:5px;">Move</button>
+         </mat-card-actions>
+       </mat-card-footer>
+   </mat-card>
+ </div>
+</div>
 
-</mat-card>
+
+
+
+<div
+    cdkDropList
+    #mumbai = "cdkDropList"
+    [cdkDropListData] ="Mumbai"
+    [cdkDropListConnectedTo] ="[hyderabad,delhi]"
+    (cdkDropListDropped) = "drop($event)"  id='mum'
+    class="drag-drop-container"
+    >
+     <div  class='drag-drop-list' >
+    <h3>HR</h3>
+    <mat-card class="example-card" *ngFor="let item of hr ;let i= index"  cdkDrag>
+       <mat-card-header>
+           <div mat-card-avatar class="example-header-image"></div>
+       <mat-card-title>{{item.name}}</mat-card-title>
+       <mat-card-subtitle>{{item.age}}</mat-card-subtitle>
+     </mat-card-header>
+
+       <mat-card-content >
+         <label id='mum'>Education</label>:
+         <label>{{item.education}}</label>
+         <br/>
+         <label  id='mum'> Work-Ex</label>:
+         <label>{{item.exp}}</label><br/>
+         <label id='mum'> Place</label>:
+         <label> {{item.place}}</label>
+         <br/>
+         <label class="lbl">Status</label>
+         <label class="lbl2">{{item.status}}</label>
+
+
+       </mat-card-content>
+
+       <mat-card-footer>
+       <mat-card-actions>
+           <button mat-raised-button color="accent" style="margin-right:5px;">Move</button>
+         </mat-card-actions>
+       </mat-card-footer>
+   </mat-card>
+ </div>
 </div>
 
 
 
 <div
-cdkDropList
-#mumbai = "cdkDropList"
-[cdkDropListData] ="Mumbai"
-[cdkDropListConnectedTo] ="[hyderabad,delhi]"
-(cdkDropListDropped) = "drop($event)"  id='mum'
-class="drag-drop-container"
- style="background-color:powderblue;">
+    cdkDropList
+    #mumbai = "cdkDropList"
+    [cdkDropListData] ="Mumbai"
+    [cdkDropListConnectedTo] ="[hyderabad,delhi]"
+    (cdkDropListDropped) = "drop($event)"  id='mum'
+    class="drag-drop-container"
+    >
+     <div  class='drag-drop-list' >
+    <h3>Final</h3>
+    <mat-card class="example-card" *ngFor="let item of final;let i= index"  cdkDrag>
+       <mat-card-header>
+           <div mat-card-avatar class="example-header-image"></div>
+       <mat-card-title>{{item.name}}</mat-card-title>
+       <mat-card-subtitle>{{item.age}}</mat-card-subtitle>
+     </mat-card-header>
 
-<h3>Final List</h3>
-<mat-card class="example-card" cdkDrag>
-   <mat-card-header>
-       <div mat-card-avatar class="example-header-image"></div>
-   <mat-card-title>Employee1</mat-card-title>
-   <mat-card-subtitle>details</mat-card-subtitle>
- </mat-card-header>
-   <mat-card-content>here for interview</mat-card-content>
+       <mat-card-content >
+         <label id='mum'>Education</label>:
+         <label>{{item.education}}</label>
+         <br/>
+         <label  id='mum'> Work-Ex</label>:
+         <label>{{item.exp}}</label><br/>
+         <label id='mum'> Place</label>:
+         <label> {{item.place}}</label>
+         <br/>
+         <label class="lbl">Status</label>
+         <label class="lbl2">{{item.status}}</label>
 
-   <mat-card-actions>
-       <button mat-button>LIKE</button>
-       <button mat-button>SHARE</button>
-     </mat-card-actions>
 
-</mat-card>
+       </mat-card-content>
+
+       <mat-card-footer>
+       <mat-card-actions>
+           <button mat-raised-button color="accent" style="margin-right:5px;">Move</button>
+         </mat-card-actions>
+       </mat-card-footer>
+   </mat-card>
+ </div>
 </div>
 
 </div>
+
+
+
+<!-----------------------------------------------For Edit candidate------------------------------------->
+
+<ng-template #myDialog>
+    <div *ngIf="IsForUpdate" class="container">
+      <h1>Edit Candidate</h1>
+      <div class="row">
+         <form (ngSubmit)="updateemp()" #addform="ngForm">
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input type="text" [(ngModel)]="newItem.name"
+              name="name"
+              class="form-control" id="name"
+               required #name="ngModel">
+            </div>
+             <div [hidden]="name.valid || name.pristine"
+                   class="alert alert-danger">
+                Employee Name is required
+              </div>
+
+            <div class="form-group">
+              <label for="name">Age</label>
+              <input type="text" [(ngModel)]="newItem.age"
+              name="age"
+              class="form-control" id="age"
+               required #age="ngModel">
+            </div>
+             <div [hidden]="age.valid || age.pristine"
+                   class="alert alert-danger">
+                   Age is required!
+              </div>
+
+              <div class="form-group">
+                  <label for="name">Education</label>
+                  <input type="text" [(ngModel)]="newItem.education"
+                  name="education"
+                  class="form-control" id="education"
+                   required #education="ngModel">
+                </div>
+                 <div [hidden]="education.valid || education.pristine"
+                       class="alert alert-danger">
+                       Education is required
+                  </div>
+
+                  <div class="form-group">
+                      <label for="exp">Work-Ex</label>
+                      <input type="exp" [(ngModel)]="newItem.exp"
+                      name="exp"
+                      class="form-control" id="exp"
+                       required #exp="ngModel">
+                    </div>
+                     <div [hidden]="exp.valid || exp.pristine"
+                           class="alert alert-danger">
+                           Education is required
+                      </div>
+
+                      <div class="form-group">
+                          <label for="place">Place</label>
+                          <input type="text" [(ngModel)]="newItem.place"
+                          name="place"
+                          class="form-control" id="place"
+                           required #place="ngModel">
+                        </div>
+                         <div [hidden]="place.valid || place.pristine"
+                               class="alert alert-danger">
+                               Education is required
+                          </div>
+
+
+            <div class="form-group">
+        <label for="power">Status</label>
+        <select class="form-control" id="status"
+        [(ngModel)]="newItem.Status" name="status"
+         required>
+          <option *ngFor="let s of status" [value]="s">{{s}}</option>
+        </select>
+      </div>
+            <button type="submit" class="btn btn-default form-control" [disabled]="!addform.form.valid" >Move</button>
+          </form>
+          <br/>
+          <button type="button" (click)="OnCancel()" class="btn btn-info form-control"  >Cancel</button>
+      </div>
+      </div>
+    </ng-template>
